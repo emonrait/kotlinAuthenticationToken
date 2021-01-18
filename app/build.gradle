@@ -30,7 +30,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+
 }
+
+//Version of resources
+def lifeCycleExtensionVersion = '2.2.0'
+def retrofitVersion = '2.7.2'
+def rxJavaVersion = '2.1.1'
+def multidex_version = "2.0.1"
 
 dependencies {
 
@@ -42,4 +50,8 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
 }

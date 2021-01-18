@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal|clip_horizontal"
-        android:text="Welcome Back,"
+        android:text="Welcome To My World"
         android:textColor="@color/colorAccent"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -118,6 +118,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical|center_horizontal|right"
                     android:text="Not Registered? "
+                    android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
 
                 <TextView
