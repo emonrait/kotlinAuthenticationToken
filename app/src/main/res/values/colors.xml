@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF0000</color>
+    <color name="colorPrimaryDark">#AA0303</color>
+    <color name="colorAccent">#FF0000</color>
+
+
+    <color name="image_layout_back_color">#FFE6E7</color>
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+    <color name="orange">#FF9800</color>
+    <color name="red">#FF0000</color>
+
+    <color name="logoPrimary">#FF0000</color>
+    <color name="logoSecondary">#BEBFC0</color>
+
+    <color name="recharge_text_color">#0477BD</color>
+    <color name="recharge_separetor_color">#4298CD</color>
+    <color name="recharge_hint_color">#9C9E9F</color>
+
+    <color name="text_field_bottom_border_color">#0477BD</color>
+    <color name="input_drawable_background_tint">#0477BD</color>
+    <color name="payment_textview_text_color">#0477BD</color>
+    <color name="finger_verification_error_text_color">#DA0404</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="blue_600">#1E88E5</color>
+    <color name="edit_text_border_color">#4B98C6</color>
+
+    <color name="cash_out_color">#B91E1E</color>
+    <color name="cash_in_color">#2DB91E</color>
+
+    <color name="print_box">#FFFAF2</color>
+    <color name="text_title">#F76363</color>
+
+</resources>
