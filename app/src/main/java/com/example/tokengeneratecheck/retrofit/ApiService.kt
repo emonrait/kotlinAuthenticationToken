@@ -4,22 +4,39 @@ import com.example.tokengeneratecheck.datamodel.TokenDataM
 import com.example.tokengeneratecheck.requestmodel.TokenRequestM
 import com.google.gson.GsonBuilder
 import io.reactivex.Single
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 class ApiService {
-    var baseurl = "http://10.11.201.44:8084/JavaToken/"
+    private val baseurl = "http://10.11.201.44:8084/TokenCheck/"
+
+
+    var okHttpClient: OkHttpClient? = OkHttpClient.Builder()
+        .addInterceptor { chain ->
+            val original = chain.request()
+            val requestBuilder = original.newBuilder()
+
+            val request = requestBuilder.build()
+            chain.proceed(request)
+        }
+        .build()
 
     var gson = GsonBuilder()
         .setLenient()
         .create()
 
-    var api = Retrofit.Builder()
+    private val api = Retrofit.Builder()
         .baseUrl(baseurl)
         .addConverterFactory(GsonConverterFactory.create(gson))
-        .build().create(Api::class.java)
+        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+        .client(okHttpClient)
+        .build()
+        .create(Api::class.java);
 
-    fun getToken(model: TokenRequestM): Single<List<TokenDataM>> {
+    fun getToken(model: TokenRequestM): Single<TokenDataM> {
         return api.getToken(
             model.requestCode,
             model.userName,

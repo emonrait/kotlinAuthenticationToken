@@ -9,11 +9,11 @@ import retrofit2.http.POST
 interface Api {
 
     @FormUrlEncoded
-    @POST("TokenCheckApi")
+    @POST("tokencheckapi")
     fun getToken(
         @Field("requestCode") requestCode: String?,
         @Field("userName") userName: String?,
         @Field("password") password: String?
 
-    ): Single<List<TokenDataM>>
+    ): Single<TokenDataM>
 }

@@ -11,15 +11,11 @@ data class TokenDataM (
     var userName: String?,
 
     @SerializedName("password")
-    var password: String?
+    var password: String?,
+
+    @SerializedName("token")
+    var token: String?
 
 
 
-){
-    override fun toString(): String {
-        super.toString()
-        return password.toString()
-    }
-
-
-}
+)
