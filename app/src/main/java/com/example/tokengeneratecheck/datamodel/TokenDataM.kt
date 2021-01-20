@@ -2,7 +2,7 @@ package com.example.tokengeneratecheck.datamodel
 
 import com.google.gson.annotations.SerializedName
 
-data class TokenDataM (
+data class TokenDataM(
 
     @SerializedName("requestCode")
     var requestCode: String?,
@@ -13,9 +13,17 @@ data class TokenDataM (
     @SerializedName("password")
     var password: String?,
 
-    @SerializedName("token")
-    var token: String?
+    @SerializedName("tokenNo")
+    var tokenNo: String?,
 
+    @SerializedName("outCode")
+    var outCode: String?,
+
+    @SerializedName("outMessage")
+    var outMessage: String?,
+
+    @SerializedName("sessionTime")
+    var sessionTime: String?
 
 
 )

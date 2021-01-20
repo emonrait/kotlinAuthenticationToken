@@ -27,12 +27,12 @@ class TokenVM : ViewModel() {
                 .subscribeWith(object : DisposableSingleObserver<TokenDataM>() {
                     override fun onSuccess(model: TokenDataM) {
                         list_token.value = model
-                        Log.e("Test Network---", model.userName.toString())
+                        Log.e("RequestCode--->", model.tokenNo.toString())
                     }
 
                     override fun onError(e: Throwable) {
                         e.printStackTrace()
-                        Log.e("Test Network---", e.message.toString())
+                        Log.e("Error---", e.message.toString())
 
                     }
 

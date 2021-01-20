@@ -2,13 +2,14 @@ package com.example.tokengeneratecheck.retrofit
 
 import com.example.tokengeneratecheck.datamodel.TokenDataM
 import com.example.tokengeneratecheck.requestmodel.TokenRequestM
+import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import io.reactivex.Single
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.concurrent.TimeUnit
+
 
 class ApiService {
     private val baseurl = "http://10.11.201.44:8084/TokenCheck/"
@@ -18,7 +19,6 @@ class ApiService {
         .addInterceptor { chain ->
             val original = chain.request()
             val requestBuilder = original.newBuilder()
-
             val request = requestBuilder.build()
             chain.proceed(request)
         }
@@ -27,6 +27,7 @@ class ApiService {
     var gson = GsonBuilder()
         .setLenient()
         .create()
+
 
     private val api = Retrofit.Builder()
         .baseUrl(baseurl)
@@ -41,7 +42,6 @@ class ApiService {
             model.requestCode,
             model.userName,
             model.password
-
         )
     }
 

@@ -19,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        et_user.setText("admin")
+        et_pass.setText("admin")
+
 
         tokenVM = ViewModelProvider(this).get(TokenVM::class.java)
 
@@ -30,12 +33,14 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
 
             } else {
-                Toast.makeText(applicationContext, "Network", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(applicationContext, "Network", Toast.LENGTH_SHORT).show()
                 getToken()
             }
         }
 
         observeViewModel()
+
+
 
 
     }
@@ -45,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         tokenVM.list_token.observe(this, androidx.lifecycle.Observer {
 
             it?.let {
-                Toast.makeText(this, it.token, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
 
 
             }
@@ -89,7 +94,6 @@ class MainActivity : AppCompatActivity() {
         model.requestCode = "1"
         model.userName = et_user.text.toString().trim()
         model.password = et_pass.text.toString().trim()
-        Log.e("Test Network",model.requestCode.toString())
         this?.let { it1 -> tokenVM.getToken(model) }
     }
 
